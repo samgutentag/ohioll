@@ -1,0 +1,621 @@
+/* === Reset === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Variables === */
+:root {
+  --dark: #1a1a1a;
+  --dark-light: #2d2d2d;
+  --accent: #666;
+  --accent-light: #ccc;
+  --text: #333;
+  --text-light: #666;
+  --bg: #fff;
+  --bg-light: #f8f9fa;
+  --border: #e0e0e0;
+  --max-width: 1100px;
+  --font-body: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: Georgia, 'Times New Roman', serif;
+}
+
+/* === Base === */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  line-height: 1.7;
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--dark);
+  line-height: 1.3;
+}
+
+h1 { font-size: 2.2rem; margin-bottom: 1rem; }
+h2 { font-size: 1.6rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+
+ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+/* === Header === */
+.site-header {
+  background: var(--dark);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo img {
+  height: 45px;
+  width: auto;
+}
+
+.logo-text {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* === Navigation === */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.main-nav > ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 0;
+  align-items: center;
+}
+
+.main-nav > ul > li {
+  position: relative;
+}
+
+.main-nav a {
+  color: rgba(255,255,255,0.85);
+  padding: 0.75rem 1rem;
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--accent-light);
+}
+
+/* Dropdown */
+.has-dropdown {
+  position: relative;
+}
+
+.has-dropdown > a::after {
+  content: ' \25BE';
+  font-size: 0.7em;
+}
+
+.dropdown {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--dark-light);
+  min-width: 220px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 0 0 4px 4px;
+  list-style: none;
+  padding: 0.5rem 0;
+  z-index: 200;
+}
+
+.has-dropdown:hover .dropdown {
+  display: flex;
+}
+
+.has-dropdown.open .dropdown {
+  display: flex;
+}
+
+.dropdown a {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+}
+
+.dropdown a:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+/* === Hero === */
+.hero {
+  background: linear-gradient(rgba(27,42,74,0.7), rgba(27,42,74,0.85)),
+              url('../assets/images/hero-home.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 5rem 1.5rem;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Page hero (smaller, for inner pages) */
+.page-hero {
+  background: var(--dark);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.page-hero h1 {
+  color: #fff;
+  font-size: 2.4rem;
+  margin-bottom: 0;
+}
+
+/* === Main Content === */
+main {
+  flex: 1;
+}
+
+.content-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.content-section p {
+  margin-bottom: 1rem;
+}
+
+.content-section ul {
+  margin-bottom: 1.25rem;
+}
+
+.content-section li {
+  margin-bottom: 0.4rem;
+}
+
+.content-section h2 {
+  margin-top: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.content-section h2:first-child {
+  margin-top: 0;
+}
+
+.content-section h3 {
+  margin-top: 1.5rem;
+  color: var(--dark-light);
+}
+
+/* === CTA Cards (Home page) === */
+.cta-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.cta-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: var(--text);
+  display: block;
+}
+
+.cta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  color: var(--text);
+}
+
+.cta-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cta-card-body {
+  padding: 1.5rem;
+}
+
+.cta-card-body h3 {
+  margin-top: 0;
+  color: var(--dark);
+}
+
+.cta-card-body p {
+  color: var(--text-light);
+  margin-bottom: 0.75rem;
+}
+
+.cta-link {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* === Services Sidebar Layout === */
+.services-layout {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 3rem;
+}
+
+.services-sidebar {
+  position: sticky;
+  top: 90px;
+  align-self: start;
+}
+
+.services-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services-sidebar a {
+  display: block;
+  padding: 0.6rem 1rem;
+  border-left: 3px solid transparent;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.services-sidebar a:hover {
+  color: var(--dark);
+  border-left-color: var(--accent);
+  background: var(--bg-light);
+}
+
+.services-sidebar a.active {
+  color: var(--dark);
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+
+.services-content h2 {
+  margin-top: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.services-content h2:first-child {
+  margin-top: 0;
+}
+
+.services-content p {
+  margin-bottom: 1rem;
+}
+
+.services-content ul {
+  margin-bottom: 1.25rem;
+}
+
+.services-content li {
+  margin-bottom: 0.4rem;
+}
+
+/* === Contact Info Block === */
+.contact-info {
+  background: var(--bg-light);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.contact-item h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.contact-item p {
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
+.contact-item a {
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.contact-item a:hover {
+  color: var(--accent);
+}
+
+/* === CTA Banner === */
+.cta-banner {
+  background: var(--dark);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.cta-banner h2 {
+  color: #fff;
+  border: none;
+  margin-top: 0;
+}
+
+.cta-banner p {
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0.5rem auto 1.5rem;
+}
+
+.cta-banner a {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  font-weight: 700;
+  min-height: 44px;
+  transition: background 0.2s;
+}
+
+.cta-banner a:hover {
+  background: var(--accent-light);
+  color: var(--dark);
+}
+
+/* === Footer === */
+.site-footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.75);
+  padding: 2.5rem 1.5rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.footer-col h4 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-col p {
+  margin-bottom: 0.3rem;
+}
+
+.footer-col a {
+  color: var(--accent-light);
+}
+
+.footer-col a:hover {
+  color: var(--accent);
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col li {
+  margin-bottom: 0.3rem;
+}
+
+.footer-disclaimer {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .main-nav.open {
+    display: block;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+  }
+
+  .main-nav a {
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    min-height: 44px;
+  }
+
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    background: rgba(0,0,0,0.15);
+    border-radius: 0;
+  }
+
+  .has-dropdown:hover .dropdown {
+    display: none;
+  }
+
+  .has-dropdown.open .dropdown {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .cta-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .services-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .services-sidebar {
+    position: static;
+  }
+
+  .services-sidebar ul {
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  .services-sidebar a {
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .services-sidebar a.active,
+  .services-sidebar a:hover {
+    border-left: none;
+    border-bottom-color: var(--accent);
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .page-hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.7rem; }
+  h2 { font-size: 1.3rem; }
+  .hero h1 { font-size: 1.6rem; }
+  .content-section,
+  .services-layout {
+    padding: 2rem 1rem;
+  }
+}
