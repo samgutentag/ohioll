@@ -153,48 +153,6 @@ ul {
   color: var(--accent-light);
 }
 
-/* Dropdown */
-.has-dropdown {
-  position: relative;
-}
-
-.has-dropdown > a::after {
-  content: ' \25BE';
-  font-size: 0.7em;
-}
-
-.dropdown {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--dark-light);
-  min-width: 220px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  border-radius: 0 0 4px 4px;
-  list-style: none;
-  padding: 0.5rem 0;
-  z-index: 200;
-}
-
-.has-dropdown:hover .dropdown {
-  display: flex;
-}
-
-.has-dropdown.open .dropdown {
-  display: flex;
-}
-
-.dropdown a {
-  padding: 0.6rem 1.25rem;
-  font-size: 0.9rem;
-}
-
-.dropdown a:hover {
-  background: rgba(255,255,255,0.05);
-}
-
 /* === Hero === */
 .hero {
   background: linear-gradient(rgba(27,42,74,0.7), rgba(27,42,74,0.85)),
@@ -267,6 +225,13 @@ main {
 .content-section h3 {
   margin-top: 1.5rem;
   color: var(--dark-light);
+}
+
+/* === Pricing Section (Home page) === */
+.pricing-section {
+  background: var(--bg-light);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 /* === CTA Cards (Home page) === */
@@ -367,7 +332,8 @@ main {
   border-bottom: 2px solid var(--accent);
 }
 
-.services-content h2:first-child {
+.services-content h2:first-child,
+.services-content section:first-child h2 {
   margin-top: 0;
 }
 
@@ -381,6 +347,41 @@ main {
 
 .services-content li {
   margin-bottom: 0.4rem;
+}
+
+.services-content h3 {
+  margin-top: 1.5rem;
+  color: var(--dark-light);
+}
+
+/* === FAQ Section === */
+.faq-section {
+  margin-top: 1rem;
+}
+
+.faq-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item:first-of-type {
+  padding-top: 0.5rem;
+}
+
+.faq-item:last-of-type {
+  border-bottom: none;
+}
+
+.faq-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+  font-size: 1.15rem;
+}
+
+.faq-item p {
+  margin-bottom: 0;
+  color: var(--text-light);
 }
 
 /* === Contact Info Block === */
@@ -411,6 +412,77 @@ main {
 
 .contact-item a:hover {
   color: var(--accent);
+}
+
+/* === Contact Form === */
+.contact-form-wrapper {
+  margin-top: 3rem;
+}
+
+.contact-form-wrapper h2 {
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.contact-form {
+  max-width: 600px;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: var(--bg-light);
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--dark);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-submit {
+  display: inline-block;
+  background: var(--dark);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 44px;
+  transition: background 0.2s;
+}
+
+.form-submit:hover {
+  background: var(--accent);
 }
 
 /* === CTA Banner === */
@@ -509,6 +581,7 @@ main {
 @media (max-width: 768px) {
   .nav-toggle {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
@@ -535,22 +608,6 @@ main {
     padding: 0.9rem 1.5rem;
     border-bottom: 1px solid rgba(255,255,255,0.05);
     min-height: 44px;
-  }
-
-  .dropdown {
-    position: static;
-    box-shadow: none;
-    background: rgba(0,0,0,0.15);
-    border-radius: 0;
-  }
-
-  .has-dropdown:hover .dropdown {
-    display: none;
-  }
-
-  .has-dropdown.open .dropdown {
-    display: flex;
-    flex-direction: column;
   }
 
   .hero h1 {

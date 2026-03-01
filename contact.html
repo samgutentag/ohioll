@@ -49,15 +49,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li class="has-dropdown">
-            <a href="services-current-permit-holders.html">Services</a>
-            <ul class="dropdown">
-              <li><a href="services-current-permit-holders.html">Current Permit Holders</a></li>
-              <li><a href="services-new-permit-applicants.html">New Permit Applicants</a></li>
-              <li><a href="services-permit-transfers.html">Permit Transfers</a></li>
-            </ul>
-          </li>
-          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
       </nav>
@@ -85,6 +77,36 @@
           <h3>Office</h3>
           <p>22 East Gay Street, Suite 400<br>Columbus, OH 43215</p>
         </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <h2>Send a Message</h2>
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-phone">Phone</label>
+            <input type="tel" id="contact-phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="contact-situation">Situation</label>
+            <select id="contact-situation" name="situation" required>
+              <option value="" disabled selected>Select your situation</option>
+              <option value="Citation">Citation</option>
+              <option value="New Permit">New Permit</option>
+              <option value="Permit Transfer">Permit Transfer</option>
+              <option value="Tax Issue">Tax Issue</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
       </div>
     </section>
 
@@ -114,8 +136,7 @@
           <h4>Quick Links</h4>
           <ul>
             <li><a href="about.html">About</a></li>
-            <li><a href="services-current-permit-holders.html">Services</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -124,5 +145,23 @@
     </div>
   </footer>
   <script src="js/nav.js"></script>
+  <script>
+  (function () {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = form.elements['name'].value.trim();
+      var phone = form.elements['phone'].value.trim();
+      var situation = form.elements['situation'].value;
+      var message = form.elements['message'].value.trim();
+      var subject = 'Ohio Liquor Lawyer Inquiry: ' + situation;
+      var body = 'Name: ' + name + '\n';
+      if (phone) body += 'Phone: ' + phone + '\n';
+      body += 'Situation: ' + situation + '\n\n' + message;
+      window.location.href = 'mailto:mark@ohioll.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  })();
+  </script>
 </body>
 </html>
