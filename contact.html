@@ -80,10 +80,16 @@
 
       <div class="contact-form-wrapper">
         <h2>Send a Message</h2>
-        <form id="contact-form" class="contact-form">
+        <!-- TODO: Replace YOUR_FORM_ID with your Formspree form ID from https://formspree.io -->
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="hidden" name="_subject" value="Ohio Liquor Lawyer Inquiry">
           <div class="form-group">
             <label for="contact-name">Name</label>
             <input type="text" id="contact-name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="email" required>
           </div>
           <div class="form-group">
             <label for="contact-phone">Phone</label>
@@ -143,23 +149,5 @@
     </div>
   </footer>
   <script src="js/nav.js"></script>
-  <script>
-  (function () {
-    var form = document.getElementById('contact-form');
-    if (!form) return;
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var name = form.elements['name'].value.trim();
-      var phone = form.elements['phone'].value.trim();
-      var situation = form.elements['situation'].value;
-      var message = form.elements['message'].value.trim();
-      var subject = 'Ohio Liquor Lawyer Inquiry: ' + situation;
-      var body = 'Name: ' + name + '\n';
-      if (phone) body += 'Phone: ' + phone + '\n';
-      body += 'Situation: ' + situation + '\n\n' + message;
-      window.location.href = 'mailto:mark@ohioll.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    });
-  })();
-  </script>
 </body>
 </html>
