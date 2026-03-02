@@ -91,16 +91,6 @@
     </section>
 
     <section class="services-layout">
-      <nav class="services-sidebar" aria-label="Services">
-        <ul>
-          <li><a href="#current-holders">Current Permit Holders</a></li>
-          <li><a href="#new-applicants">New Permit Applicants</a></li>
-          <li><a href="#transfers">Permit Transfers</a></li>
-          <li><a href="#flat-fee">Additional Flat-Fee Services</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </nav>
-
       <div class="services-content">
 
         <section id="current-holders">
@@ -254,28 +244,5 @@
     </div>
   </footer>
   <script src="js/nav.js"></script>
-  <script>
-  (function () {
-    var sidebar = document.querySelector('.services-sidebar');
-    if (!sidebar) return;
-    var links = sidebar.querySelectorAll('a[href^="#"]');
-    var sections = [];
-    links.forEach(function (link) {
-      var target = document.querySelector(link.getAttribute('href'));
-      if (target) sections.push({ link: link, target: target });
-    });
-    function updateActive() {
-      var scrollY = window.scrollY + 120;
-      var current = sections[0];
-      sections.forEach(function (s) {
-        if (s.target.offsetTop <= scrollY) current = s;
-      });
-      links.forEach(function (l) { l.classList.remove('active'); });
-      if (current) current.link.classList.add('active');
-    }
-    window.addEventListener('scroll', updateActive);
-    updateActive();
-  })();
-  </script>
 </body>
 </html>

@@ -25,6 +25,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -214,8 +215,13 @@ main {
 
 .content-section h2 {
   margin-top: 2rem;
+  padding-top: 1.25rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--accent);
+  position: sticky;
+  top: 62px;
+  background: var(--bg);
+  z-index: 40;
 }
 
 .content-section h2:first-child {
@@ -227,11 +233,31 @@ main {
   color: var(--dark-light);
 }
 
+/* === Pull Quote === */
+.pull-quote {
+  border-left: 4px solid var(--dark);
+  background: var(--bg-light);
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--dark);
+}
+
+.pull-quote p {
+  margin-bottom: 0;
+}
+
 /* === Pricing Section (Home page) === */
 .pricing-section {
   background: var(--bg-light);
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.pricing-section h2 {
+  background: var(--bg-light);
 }
 
 /* === CTA Cards (Home page) === */
@@ -284,52 +310,22 @@ main {
   font-size: 0.95rem;
 }
 
-/* === Services Sidebar Layout === */
+/* === Services Layout === */
 .services-layout {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 3rem 1.5rem;
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 3rem;
-}
-
-.services-sidebar {
-  position: sticky;
-  top: 90px;
-  align-self: start;
-}
-
-.services-sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.services-sidebar a {
-  display: block;
-  padding: 0.6rem 1rem;
-  border-left: 3px solid transparent;
-  color: var(--text-light);
-  font-size: 0.95rem;
-  transition: all 0.2s;
-}
-
-.services-sidebar a:hover {
-  color: var(--dark);
-  border-left-color: var(--accent);
-  background: var(--bg-light);
-}
-
-.services-sidebar a.active {
-  color: var(--dark);
-  border-left-color: var(--accent);
-  font-weight: 600;
 }
 
 .services-content h2 {
   margin-top: 2rem;
+  padding-top: 1.25rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--accent);
+  position: sticky;
+  top: 62px;
+  background: var(--bg);
+  z-index: 40;
 }
 
 .services-content h2:first-child,
@@ -620,37 +616,6 @@ main {
 
   .cta-cards {
     grid-template-columns: 1fr;
-  }
-
-  .services-layout {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .services-sidebar {
-    position: static;
-  }
-
-  .services-sidebar ul {
-    display: flex;
-    gap: 0.25rem;
-    flex-wrap: wrap;
-  }
-
-  .services-sidebar a {
-    border-left: none;
-    border-bottom: 2px solid transparent;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.85rem;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-  }
-
-  .services-sidebar a.active,
-  .services-sidebar a:hover {
-    border-left: none;
-    border-bottom-color: var(--accent);
   }
 
   .contact-info {
