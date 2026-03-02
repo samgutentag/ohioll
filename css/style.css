@@ -191,15 +191,15 @@ ul {
 
 /* === Hero === */
 .hero {
-  background: radial-gradient(ellipse at 50% 0%, rgba(45,106,79,0.07) 0%, transparent 60%),
-              var(--bg-raised);
-  color: var(--text-bright);
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+              url('../assets/images/hero-home.jpg') center/cover no-repeat;
+  color: #fff;
   text-align: center;
   padding: 6rem 1.5rem 5rem;
 }
 
 .hero h1 {
-  color: var(--text-bright);
+  color: #fff;
   font-size: 3.5rem;
   margin-bottom: 0.75rem;
   font-weight: 700;
@@ -210,7 +210,7 @@ ul {
 
 .hero p {
   font-size: 1.2rem;
-  color: var(--text-secondary);
+  color: rgba(255,255,255,0.85);
   max-width: 550px;
   margin: 0 auto;
   line-height: 1.6;
@@ -283,6 +283,19 @@ ul {
   min-width: 220px;
 }
 
+.hero .btn-outline,
+.cta-banner .btn-outline {
+  color: #fff;
+  border-color: rgba(255,255,255,0.5);
+}
+
+.hero .btn-outline:hover,
+.cta-banner .btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #fff;
+  color: #fff;
+}
+
 .inline-cta {
   display: flex;
   gap: 0.75rem;
@@ -295,16 +308,16 @@ ul {
 
 /* Page hero (smaller, for inner pages) */
 .page-hero {
-  background: radial-gradient(ellipse at 50% 0%, rgba(45,106,79,0.05) 0%, transparent 60%),
-              var(--bg-raised);
-  color: var(--text-bright);
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+              url('../assets/images/hero-home.jpg') center/cover no-repeat;
+  color: #fff;
   text-align: center;
   padding: 4rem 1.5rem 3rem;
   border-bottom: 1px solid var(--border);
 }
 
 .page-hero h1 {
-  color: var(--text-bright);
+  color: #fff;
   font-size: 2.5rem;
   margin-bottom: 0;
 }
@@ -665,8 +678,9 @@ main {
 
 /* === CTA Banner === */
 .cta-banner {
-  background: var(--bg-raised);
-  color: var(--text-bright);
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('../assets/images/hero-home.jpg') center/cover no-repeat;
+  color: #fff;
   text-align: center;
   padding: 4rem 1.5rem;
   margin-top: 0;
@@ -674,13 +688,13 @@ main {
 }
 
 .cta-banner h2 {
-  color: var(--text-bright);
+  color: #fff;
   border: none;
   margin-top: 0;
 }
 
 .cta-banner p {
-  color: var(--text-secondary);
+  color: rgba(255,255,255,0.85);
   max-width: 500px;
   margin: 0.5rem auto 1.5rem;
 }
