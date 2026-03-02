@@ -333,6 +333,23 @@ main {
   margin-bottom: 0;
 }
 
+/* === Credentials Grid === */
+.credentials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.credential-item h3 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.credential-item ul {
+  margin-bottom: 0;
+}
+
 /* === Pricing Section (Home page) === */
 .pricing-section {
   background: var(--bg-light);
@@ -706,7 +723,8 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .contact-info {
+  .contact-info,
+  .credentials-grid {
     grid-template-columns: 1fr;
   }
 
