@@ -255,6 +255,7 @@ ul {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
@@ -514,6 +515,11 @@ main {
 /* === Contact Form === */
 .contact-form-wrapper {
   margin-top: 3rem;
+  text-align: center;
+}
+
+.contact-form-wrapper .contact-form {
+  text-align: left;
 }
 
 .contact-form-wrapper h2 {
@@ -525,6 +531,7 @@ main {
 
 .contact-form {
   max-width: 600px;
+  margin: 0 auto;
 }
 
 .form-group {
