@@ -341,7 +341,7 @@ main {
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 62px;
-  background: linear-gradient(180deg, #e8ebf0 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, #e8ebf0 40%, #e8ebf0 60%, var(--bg) 100%);
   z-index: 40;
 }
 
@@ -413,15 +413,8 @@ main {
 
 /* === Pricing Section (Home page) === */
 .pricing-section {
-  background: var(--bg-raised);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
   padding-top: 4rem;
   padding-bottom: 4rem;
-}
-
-.pricing-section h2 {
-  background: linear-gradient(180deg, #dde1e8 0%, var(--bg-raised) 100%);
 }
 
 /* === CTA Cards (Home page) === */
@@ -492,7 +485,7 @@ main {
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 62px;
-  background: linear-gradient(180deg, #e8ebf0 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, #e8ebf0 40%, #e8ebf0 60%, var(--bg) 100%);
   z-index: 40;
 }
 
