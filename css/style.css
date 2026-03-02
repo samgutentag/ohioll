@@ -310,6 +310,16 @@ ul {
 .page-hero {
   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
               url('../assets/images/hero-home.jpg') center/cover no-repeat;
+}
+
+.page-hero--services {
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+              url('../assets/images/about.png') center/cover no-repeat;
+}
+
+.page-hero--contact {
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+              url('../assets/images/contact.png') center/cover no-repeat;
   color: #fff;
   text-align: center;
   padding: 4rem 1.5rem 3rem;
