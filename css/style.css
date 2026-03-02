@@ -335,12 +335,13 @@ main {
 
 .content-section h2 {
   margin-top: 2.5rem;
-  padding-top: 1.25rem;
-  padding-bottom: 0.75rem;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: 1.25rem calc(50vw - 50%) 0.75rem;
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 62px;
-  background: linear-gradient(180deg, var(--bg-raised) 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #e8ebf0 0%, var(--bg) 100%);
   z-index: 40;
 }
 
@@ -420,7 +421,7 @@ main {
 }
 
 .pricing-section h2 {
-  background: linear-gradient(180deg, #eef0f3 0%, var(--bg-raised) 100%);
+  background: linear-gradient(180deg, #dde1e8 0%, var(--bg-raised) 100%);
 }
 
 /* === CTA Cards (Home page) === */
@@ -485,12 +486,13 @@ main {
 
 .services-content h2 {
   margin-top: 2.5rem;
-  padding-top: 1.25rem;
-  padding-bottom: 0.75rem;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: 1.25rem calc(50vw - 50%) 0.75rem;
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 62px;
-  background: linear-gradient(180deg, var(--bg-raised) 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #e8ebf0 0%, var(--bg) 100%);
   z-index: 40;
 }
 
